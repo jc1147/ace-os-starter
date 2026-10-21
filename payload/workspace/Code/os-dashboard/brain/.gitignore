@@ -1,0 +1,3 @@
+# generated on every served page load (GET /brain/brain-data.json?fresh=1) or by: node build-brain-data.mjs
+brain-data.js
+brain-data.json

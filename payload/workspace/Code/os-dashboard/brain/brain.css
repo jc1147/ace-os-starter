@@ -1,0 +1,186 @@
+:root{
+  --bg:#05030b; --void:#060410; --violet:#a78bfa; --deep:#7c3aed; --bright:#bfa6ff; --magenta:#d24bff; --cyan:#49c7ff; --amber:#f6b74a;
+  --ink0:#f2edff; --ink1:#c3b6e8; --ink2:#8b7fb4; --ink3:#5f5686;
+  --line:rgba(167,139,250,.34); --lineSoft:rgba(167,139,250,.16);
+  --glass:rgba(13,8,32,.72); --glassHi:rgba(13,8,32,.82);
+  --sans:"Segoe UI",system-ui,-apple-system,sans-serif; --mono:"Cascadia Code",Consolas,ui-monospace,monospace;
+  --gut:16px; --th:46px; --sh:122px; --cardW:400px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden;background:var(--bg);color:var(--ink0);font:13px/1.4 var(--sans)}
+#bg{position:fixed;inset:0;z-index:0;
+  background:
+    radial-gradient(48% 46% at 50% 50%, rgba(124,58,237,.20), transparent 72%),
+    radial-gradient(30% 34% at 30% 40%, rgba(210,75,255,.07), transparent 70%),
+    radial-gradient(34% 34% at 72% 62%, rgba(73,199,255,.05), transparent 70%),
+    radial-gradient(40% 50% at 6% 92%, rgba(124,58,237,.10), transparent 70%),
+    radial-gradient(36% 46% at 96% 8%, rgba(210,75,255,.06), transparent 70%),
+    radial-gradient(130% 100% at 50% 50%, var(--void), var(--bg) 78%);}
+#gl{position:fixed;inset:0;width:100vw;height:100vh;z-index:1;display:block;cursor:grab}
+#gl.drag{cursor:grabbing} #gl.point{cursor:pointer}
+#lead{position:fixed;inset:0;width:100vw;height:100vh;z-index:2;pointer-events:none}
+#labels{position:fixed;inset:0;z-index:3;pointer-events:none;overflow:hidden}
+.glass{background:var(--glass);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);
+  border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 40px rgba(0,0,0,.45),inset 0 1px 0 rgba(191,166,255,.08)}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;flex:none;background:currentColor;box-shadow:0 0 8px currentColor}
+
+/* ---------- header ---------- */
+#top{position:fixed;z-index:6;left:var(--gut);right:var(--gut);top:10px;height:var(--th);display:flex;align-items:center;gap:16px;padding:0 14px 0 16px}
+.mark{width:22px;height:22px;border-radius:50%;flex:none;
+  background:radial-gradient(circle at 50% 50%,#fff 0 2px,transparent 3px),repeating-radial-gradient(circle at 50% 50%,rgba(191,166,255,.9) 0 1px,transparent 1.5px 5px);
+  box-shadow:0 0 14px rgba(167,139,250,.7)}
+#top h1{margin:0;font-size:16px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--ink0);text-shadow:0 0 18px rgba(167,139,250,.6)}
+#top .line{margin:0;color:var(--ink1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:0 1 auto}
+.hsp{flex:1}
+.legend{display:flex;gap:12px;align-items:center;font-size:12px;color:var(--ink1);white-space:nowrap;flex:none}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend .dot{width:7px;height:7px}
+/* the Memory index is a ring in the legend so it does not read as the white User dot */
+.legend .dot.core{width:10px;height:10px;background:transparent;border:2px solid currentColor;box-shadow:0 0 8px currentColor,inset 0 0 4px currentColor}
+.counts{display:flex;gap:8px;flex:none}
+.chip{font:12px var(--mono);color:var(--ink1);border:1px solid var(--lineSoft);border-radius:999px;padding:3px 10px;white-space:nowrap;background:rgba(124,58,237,.08)}
+.chip em{font-style:normal;color:var(--ink0)}
+.live{display:flex;align-items:center;gap:7px;font:12px var(--mono);color:var(--ink1);flex:none;border:1px solid var(--lineSoft);border-radius:999px;padding:3px 10px 3px 8px}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--ink3)}
+.live.on i{background:#5cf2a0;box-shadow:0 0 10px #5cf2a0;animation:beat 1.6s ease-in-out infinite}
+.live.off i{background:#ff4d7d;box-shadow:0 0 8px #ff4d7d}
+.live.demo i{background:var(--amber);box-shadow:0 0 8px var(--amber)}
+@keyframes beat{0%,100%{opacity:1}50%{opacity:.45}}
+
+/* ---------- ask bar ---------- */
+#askWrap{position:fixed;z-index:7;top:calc(10px + var(--th) + 10px);left:50%;transform:translateX(-50%);width:min(1180px,calc(100vw - 2 * var(--gut) - 40px))}
+.bar{display:flex;align-items:center;gap:14px;padding:6px 16px;border-radius:16px;background:var(--glassHi);
+  border-color:rgba(167,139,250,.5);box-shadow:0 0 0 1px rgba(124,58,237,.18),0 10px 50px rgba(124,58,237,.25),inset 0 0 30px rgba(124,58,237,.10);cursor:text}
+.bar:focus-within{border-color:var(--bright);box-shadow:0 0 0 1px rgba(191,166,255,.35),0 10px 60px rgba(167,139,250,.35),inset 0 0 30px rgba(124,58,237,.14)}
+.prompt{font:14px var(--mono);color:var(--magenta);letter-spacing:.08em;text-transform:uppercase;flex:none}
+#q{flex:1;min-width:0;background:none;border:0;outline:none;color:var(--ink0);font:21px var(--sans);padding:3px 0;caret-color:var(--magenta)}
+#q::placeholder{color:var(--ink3)}
+.qcount{font:12px var(--mono);color:var(--ink1);white-space:nowrap;flex:none}
+.qcount b{color:var(--ink0);font-weight:600}
+.keys{color:var(--ink3);font-size:11px;white-space:nowrap;flex:none}
+kbd{font:11px var(--mono);color:var(--ink1);border:1px solid var(--line);border-radius:5px;padding:0 .35em;margin:0 .15em;background:rgba(167,139,250,.08)}
+#results{display:none;margin-top:8px;max-height:min(330px,34vh);overflow:auto;padding:6px;background:rgba(10,6,26,.9)}
+#results.on{display:block}
+#results .hdr{font:11px var(--mono);color:var(--ink2);padding:4px 10px 6px;display:flex;justify-content:space-between;gap:12px}
+.res{display:grid;grid-template-columns:2em 10px 1fr auto;gap:9px;align-items:center;padding:5px 10px;border-radius:9px;cursor:pointer;color:var(--ink1)}
+.res:hover{background:rgba(167,139,250,.10)}
+.res.on{background:rgba(124,58,237,.26);color:var(--ink0);box-shadow:inset 2px 0 0 var(--bright)}
+.res .rk{font:11px var(--mono);color:var(--ink3);text-align:right}
+.res .t{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink0)}
+.res .t em{font-style:normal;color:var(--ink3);font-size:11px;margin-left:.6em}
+.res .m{font-size:11px;color:var(--ink2);white-space:nowrap;max-width:280px;overflow:hidden;text-overflow:ellipsis}
+#results .empty{color:var(--ink1);padding:6px 10px 10px}
+
+/* ---------- labels in the scene ---------- */
+.lab{position:absolute;left:0;top:0;white-space:nowrap;will-change:transform;text-shadow:0 0 4px rgba(5,3,11,.95),0 0 10px rgba(5,3,11,.9)}
+/* a soft dark backing keeps a lobe label readable wherever it lands over fibres */
+.lobe{pointer-events:auto;cursor:pointer;padding:2px 6px;border-radius:7px;background:rgba(5,3,11,.55);box-shadow:0 0 14px 6px rgba(5,3,11,.45)}
+.lobe .h{font:600 13px var(--sans);color:var(--ink0)}
+.lobe .h b{font:400 12px var(--mono);color:var(--bright);margin-left:7px}
+.lobe .a{font-size:11.5px;color:var(--ink2);margin-top:1px;max-width:290px;overflow:hidden;text-overflow:ellipsis}
+.lobe.r{text-align:right}
+/* sections: the section's fixed colour as a small swatch before its name (the rim band glows in the same colour) */
+.lobe .sw{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:6px;vertical-align:0;box-shadow:0 0 6px currentColor}
+/* no sitemap: the lobes are link clusters, and the page says so under the header */
+#layoutNote{position:fixed;left:50%;transform:translateX(-50%);top:122px;z-index:7;padding:6px 12px;border-radius:9px;font:12px var(--sans);color:var(--amber);pointer-events:none;max-width:min(92vw,620px);text-align:center}
+html.mini #layoutNote{top:6px;font-size:11px;padding:3px 8px}
+.lobe:hover .h,.lobe.on .h{color:#fff}
+.lobe.on{background:rgba(124,58,237,.18)}
+.inn{font:600 12px var(--sans);color:#e4dcff;letter-spacing:.02em}
+.inn.moc{color:#f0c8ff}
+.core{font:700 14px var(--sans);color:#fff;text-align:center}
+/* the link count sits on the core's glow: light ink on a dark plate */
+.core small{display:block;width:fit-content;margin:2px auto 0;padding:0 6px;border-radius:6px;font:400 11px var(--mono);color:var(--ink0);background:rgba(5,3,11,.72)}
+.nl{font-size:12px;color:var(--ink1);padding:0 3px}
+.nl.s{color:var(--ink0)}
+.nl.h{color:#fff;font-weight:700;background:rgba(124,58,237,.45);border-radius:4px;box-shadow:0 0 0 1px var(--bright)}
+.nl.m{color:#fff;border-left:2px solid var(--magenta);padding-left:5px;background:rgba(13,8,32,.55);border-radius:3px}
+
+/* ---------- pinned card ---------- */
+/* --cardTop is set by brain.js: below the Ask bar whenever the bar reaches over the card's column, otherwise under the header */
+#card{position:fixed;z-index:6;right:var(--gut);width:var(--cardW);top:var(--cardTop,calc(10px + var(--th) + 12px));bottom:calc(var(--sh) + 22px);display:none;flex-direction:column;overflow:hidden;background:rgba(13,8,32,.8)}
+#card.on{display:flex}
+#card .in{overflow:auto;padding:16px 18px 14px}
+.x{float:right;border:1px solid var(--line);background:none;color:var(--ink1);border-radius:8px;padding:1px 8px;cursor:pointer;font:13px var(--sans);margin:-2px -4px 0 8px}
+.x:hover{color:var(--ink0);border-color:var(--bright)}
+.ctype{display:inline-flex;align-items:center;gap:7px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+#card h2{margin:6px 0 8px;font-size:19px;line-height:1.25;font-weight:600}
+#card p{margin:0 0 12px;color:var(--ink1);font-size:13px;line-height:1.5}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:5px 12px;margin:0 0 12px;font-size:12.5px}
+.facts dt{color:var(--ink2)}
+.facts dd{margin:0;color:var(--ink0);min-width:0;overflow-wrap:anywhere}
+.facts dd small{display:block;color:var(--ink2);font-size:11.5px}
+.sec{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);margin:12px 0 6px;display:flex;justify-content:space-between}
+.sec span:last-child{letter-spacing:0;text-transform:none;font-family:var(--mono)}
+.lgroup{margin:0 0 10px}
+.lgh{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--ink2);text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px}
+.lgh b{font:400 11px var(--mono);color:var(--ink1);letter-spacing:0}
+.lk{display:flex;gap:8px;align-items:baseline;padding:2px 5px;border-radius:6px;cursor:pointer;color:var(--ink0);font-size:12.5px}
+.lk:hover{background:rgba(167,139,250,.12)}
+.lk .ar{font-family:var(--mono);color:var(--ink3);width:1.2em;flex:none;text-align:center}
+.lk .lt{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lk .ld{font:11px var(--mono);color:var(--ink3);margin-left:auto;flex:none}
+.more{color:var(--ink3);font-size:11.5px;padding:2px 5px}
+
+/* ---------- live ticker ---------- */
+#ticker{position:fixed;z-index:6;left:var(--gut);bottom:calc(var(--sh) + 22px);width:min(470px,34vw);padding:9px 12px 8px;background:rgba(13,8,32,.7)}
+#ticker .th{display:flex;align-items:center;gap:8px;font:11px var(--mono);color:var(--ink2);letter-spacing:.06em;margin-bottom:4px}
+#ticker .th i{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 8px var(--amber)}
+#ticker.on .th i{background:#5cf2a0;box-shadow:0 0 10px #5cf2a0}
+#ticker.off .th i{background:#ff4d7d;box-shadow:0 0 8px #ff4d7d}
+#ticker .th b{color:var(--ink0);font-weight:400;text-transform:uppercase}
+#tlist{display:flex;flex-direction:column;gap:2px}
+.ev{display:flex;gap:7px;align-items:baseline;font-size:12px;color:var(--ink1);white-space:nowrap;overflow:hidden}
+.ev .k{font:11px var(--mono);flex:none;min-width:3.6em}
+.ev .n{color:var(--ink0);overflow:hidden;text-overflow:ellipsis;min-width:0}
+.ev .s{font:11px var(--mono);color:var(--ink3);flex:none;margin-left:auto}
+.ev.fresh .n{text-shadow:0 0 10px rgba(191,166,255,.6)}
+#ticker .empty{font-size:12px;color:var(--ink3)}
+
+/* ---------- timeline strip ---------- */
+#strip{position:fixed;z-index:6;left:var(--gut);right:var(--gut);bottom:10px;height:var(--sh);display:flex;gap:14px;padding:11px 14px 8px}
+.ctl{width:300px;flex:none;display:flex;flex-direction:column;justify-content:space-between}
+.ctl .row1{display:flex;align-items:center;gap:12px}
+#play{width:46px;height:46px;border-radius:50%;border:1px solid var(--bright);background:radial-gradient(circle,rgba(167,139,250,.45),rgba(124,58,237,.25));color:#fff;cursor:pointer;display:grid;place-items:center;box-shadow:0 0 18px rgba(167,139,250,.5);flex:none}
+#play:hover{box-shadow:0 0 26px rgba(191,166,255,.8)}
+.tdate{font:600 19px var(--mono);color:var(--ink0);line-height:1.15}
+.tsub{font-size:12px;color:var(--ink2);line-height:1.35}
+.btns{display:flex;gap:6px}
+.btns button{border:1px solid var(--line);background:rgba(6,4,16,.6);color:var(--ink1);border-radius:8px;padding:4px 10px;cursor:pointer;font:12px var(--sans)}
+.btns button:hover{color:var(--ink0);border-color:var(--bright)}
+#tl{flex:1;min-width:0;height:100%;display:block;cursor:ew-resize}
+
+/* ---------- tooltip / states ---------- */
+#tip{position:fixed;z-index:9;pointer-events:none;max-width:400px;padding:9px 12px;display:none;background:rgba(13,8,32,.9)}
+#tip .ty{display:flex;align-items:center;gap:7px;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+#tip .t{font-size:13.5px;font-weight:600;color:var(--ink0);margin:3px 0 4px;line-height:1.3}
+#tip .d{font-size:12px;color:var(--ink1);line-height:1.45}
+#tip .m{font:11px var(--mono);color:var(--ink2);margin-top:5px}
+#loading{position:fixed;inset:0;z-index:8;display:grid;place-items:center;color:var(--ink2);font:13px var(--mono);pointer-events:none}
+#err{position:fixed;inset:0;z-index:10;display:none;place-items:center;color:var(--amber);font:15px var(--mono)}
+::-webkit-scrollbar{width:8px}::-webkit-scrollbar-thumb{background:rgba(167,139,250,.25);border-radius:8px}::-webkit-scrollbar-track{background:transparent}
+
+@media (max-width:2200px){ :root{ --cardW:360px; --sh:116px; } #top .line{display:none} }
+@media (max-width:1500px){ .legend{display:none} .keys{display:none} }
+
+/* ?lite=1: no backdrop blur (software rendering, slow machines) */
+.lite .glass{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(13,8,32,.88)}
+
+/* ---------- embedded in the OS dashboard (?embed=1, set by brain.js) ---------- */
+/* mini: only the ring and its labels, on a transparent page, so the dashboard's backdrop shows through the window */
+html.mini,html.mini body{background:transparent}
+html.mini #bg,html.mini #top,html.mini #askWrap,html.mini #card,html.mini #ticker,html.mini #strip{display:none!important}
+/* the small window has no room for a second line under each lobe name (brain.js stacks the labels closer to match) */
+html.mini .lobe .a{display:none}
+/* the window's edge is soft: the scene (fibres, glow, rim, leader lines) fades out over the outer --fe px (set by brain.js,
+   about 5% of the short side), so a zoomed ring or a lobe in front dissolves into the dashboard's backdrop rather than being
+   cut off in straight lines. The labels layer is not masked: lobe names stay inside the window, and brain.js fades the rest */
+html.mini #gl,html.mini #lead{
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 var(--fe,0px),#000 calc(100% - var(--fe,0px)),transparent),linear-gradient(to bottom,transparent,#000 var(--fe,0px),#000 calc(100% - var(--fe,0px)),transparent);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(to right,transparent,#000 var(--fe,0px),#000 calc(100% - var(--fe,0px)),transparent),linear-gradient(to bottom,transparent,#000 var(--fe,0px),#000 calc(100% - var(--fe,0px)),transparent);
+  mask-composite:intersect}
+/* full: the page as standalone plus the way back, a pill like the live one at the right end of the header */
+.collapse{display:flex;align-items:center;gap:7px;font:12px var(--mono);color:var(--ink1);flex:none;border:1px solid var(--lineSoft);border-radius:999px;padding:3px 11px 3px 9px;background:none;cursor:pointer}
+.collapse svg{flex:none;color:var(--bright)}
+.collapse:hover{color:var(--ink0);border-color:var(--bright);background:rgba(124,58,237,.14)}

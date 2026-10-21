@@ -1,0 +1,419 @@
+{
+ "feedback_active_hooks_means_wired_entries.md": {
+  "home": "claude/hooks",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "feedback_closing_message_what_stop_gates_want.md": {
+  "home": "claude/hooks",
+  "also": [
+   "proof/standards"
+  ],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "feedback_default_to_broken_smoke_test_every_stage.md": {
+  "home": "proof/standards",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "feedback_edit_notes_read_before_write.md": {
+  "home": "claude/memory",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "feedback_enforce_with_hooks_not_rules.md": {
+  "home": "claude/hooks",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "feedback_gate_presence_is_not_enforcement.md": {
+  "home": "claude/hooks",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "feedback_gates_must_be_session_scoped.md": {
+  "home": "claude/hooks",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "feedback_grep_is_not_a_visual_audit.md": {
+  "home": "proof/visual",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "feedback_never_exempt_yourself_from_your_own_gate.md": {
+  "home": "proof/gates",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "feedback_never_talk_past_a_safety_block.md": {
+  "home": "claude/hooks",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "feedback_new_blocking_hooks_ship_diag_first.md": {
+  "home": "claude/hooks",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "feedback_recurring_bug_needs_a_guard.md": {
+  "home": "proof/gates",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "feedback_regenerate_every_artifact_before_handoff.md": {
+  "home": "proof/standards",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "feedback_render_verify_dashboard_by_looking.md": {
+  "home": "proof/visual",
+  "also": [
+   "aceos/dashboard"
+  ],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "feedback_runtime_files_must_be_portable.md": {
+  "home": "claude/hooks",
+  "also": [
+   "machines/tools"
+  ],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "feedback_scripts_hooks_run_are_live.md": {
+  "home": "claude/memory",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "feedback_skill_doc_metric_matches_gate.md": {
+  "home": "claude/memory",
+  "also": [
+   "proof/gates",
+   "claude/skills"
+  ],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "feedback_start_sessions_in_the_workspace.md": {
+  "home": "machines/setup",
+  "also": [
+   "claude/memory"
+  ],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "feedback_temp_log_stamps_from_real_clock.md": {
+  "home": "claude/memory",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "feedback_verify_mechanism_advances_not_just_wired.md": {
+  "home": "proof/gates",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "feedback_wrap_leaves_resume_doc_and_kickstart.md": {
+  "home": "claude/memory",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "feedback_wrap_up_ends_with_state_not_offers.md": {
+  "home": "rules/talk",
+  "also": [
+   "claude/memory"
+  ],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "feedback_wrap_up_mid_session_is_a_checkpoint.md": {
+  "home": "claude/memory",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_auto_mode_blocks_hand_over_the_exact_command.md": {
+  "home": "claude/hooks",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_claude_config_dir_relocates_config.md": {
+  "home": "aceos/setup",
+  "also": [
+   "claude/hooks"
+  ],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_dashboard_chat_is_off_until_you_arm_it.md": {
+  "home": "aceos/dashboard",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_dashboard_handlers_must_not_block.md": {
+  "home": "aceos/dashboard",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_enumerate_inputs_before_verifying_outputs.md": {
+  "home": "proof/gates",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_filing_notes_in_the_sitemap.md": {
+  "home": "claude/memory",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_gate_must_fail_on_unparsable.md": {
+  "home": "proof/gates",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_gate_scope_narrower_than_its_name.md": {
+  "home": "proof/gates",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_gates_must_pass_a_null_rebuild.md": {
+  "home": "proof/gates",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_hook_anatomy_four_decisions.md": {
+  "home": "claude/hooks",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_hook_scoping_settings_vs_skill.md": {
+  "home": "claude/hooks",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_how_wrap_up_works.md": {
+  "home": "claude/memory",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_how_your_brain_works.md": {
+  "home": "claude/memory",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_memory_router_budgets.md": {
+  "home": "claude/memory",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_prompt_history_file.md": {
+  "home": "claude/memory",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_prove_a_gate_by_attacking_it.md": {
+  "home": "proof/gates",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_recall_ranks_name_description_body.md": {
+  "home": "claude/memory",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_rule_constants_own_their_count_gates.md": {
+  "home": "proof/gates",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_session_liveness_pid_not_heartbeat.md": {
+  "home": "claude/agents",
+  "also": [
+   "aceos/dashboard"
+  ],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_syntax_check_is_not_a_run_check.md": {
+  "home": "proof/gates",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_the_global_gate_set.md": {
+  "home": "claude/hooks",
+  "also": [
+   "aceos/setup"
+  ],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_transcript_queued_messages.md": {
+  "home": "claude/memory",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_ultracode_setting.md": {
+  "home": "claude/hooks",
+  "also": [
+   "claude/agents"
+  ],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_unschemad_synthesis_agent_answers_the_memory_hook.md": {
+  "home": "claude/agents",
+  "also": [
+   "claude/hooks"
+  ],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_verification_standards_hub.md": {
+  "home": "proof/standards",
+  "also": [
+   "proof/gates"
+  ],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ },
+ "reference_write_matcher_misses_edit_and_scripts.md": {
+  "home": "claude/hooks",
+  "also": [],
+  "confidence": "high",
+  "why": "filed by the Ace OS starter",
+  "placedBy": "aceos-starter",
+  "placedAt": "seed"
+ }
+}

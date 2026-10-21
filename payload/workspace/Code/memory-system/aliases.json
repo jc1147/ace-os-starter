@@ -1,0 +1,28 @@
+{
+  "about": "recall.mjs alias groups: equivalent terms. A query that holds any form of a group also matches notes holding the group's other forms, at a lower weight (see weight). Every group names at least one note that states the equivalence. Forms are matched as whole words after the recall tokenizer (lowercase, letters and digits, stopwords dropped, light plural folding); a multi-word form matches those words in a row. Add your own groups (for example a client's short name and full name) the same way.",
+  "weight": 0.5,
+  "normalize": {},
+  "groups": [
+    {
+      "id": "brain",
+      "forms": ["brain", "second brain", "memory system"],
+      "sources": [
+        { "note": "reference_how_your_brain_works.md", "says": "The brain is Claude's long-term memory for this workspace" }
+      ]
+    },
+    {
+      "id": "wrapup",
+      "forms": ["wrap-up", "wrapup", "memory pass", "end of session"],
+      "sources": [
+        { "note": "reference_how_wrap_up_works.md", "says": "The /wrap-up skill is the end-of-session memory pass" }
+      ]
+    },
+    {
+      "id": "proofgate",
+      "forms": ["proof of work", "unverified completion"],
+      "sources": [
+        { "note": "feedback_closing_message_what_stop_gates_want.md", "says": "Proof-of-work gate (block-unverified-completion.js)" }
+      ]
+    }
+  ]
+}

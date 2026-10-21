@@ -1,0 +1,12 @@
+[
+ {
+  "skill": "memory",
+  "section": "claude",
+  "topic": "claude/memory"
+ },
+ {
+  "skill": "wrap-up",
+  "section": "claude",
+  "topic": "claude/memory"
+ }
+]

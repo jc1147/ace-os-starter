@@ -1,0 +1,102 @@
+{
+  "version": "1.0",
+  "description": "Ace OS agents (Ace Level 1 core + the dashboard worker). Run start-here to configure.",
+  "categories": {
+    "default": {
+      "description": "Pre-selected during setup. Opt-out to skip.",
+      "agents": [
+        "session-logger",
+        "workspace-sync",
+        "status-reporter"
+      ]
+    },
+    "optional": {
+      "description": "Choose during setup based on your needs.",
+      "agents": [
+        "calendar-audit",
+        "goals-onboarding",
+        "goals-weekly-review",
+        "pm",
+        "skill-mining",
+        "vscode-setup"
+      ]
+    },
+    "onboarding": {
+      "description": "Setup-time helpers. Run once.",
+      "agents": [
+        "system-overview",
+        "start-here"
+      ]
+    },
+    "system": {
+      "description": "Used by Ace OS itself. Keep installed.",
+      "agents": [
+        "os-worker"
+      ]
+    }
+  },
+  "agents": {
+    "calendar-audit": {
+      "file": "calendar-audit.md",
+      "mcp": [
+        "google-workspace"
+      ],
+      "description": "Review calendar events, log outcomes, reschedule"
+    },
+    "goals-onboarding": {
+      "file": "goals-onboarding.md",
+      "mcp": [],
+      "description": "Set up the OKR/goals YAML system for a project"
+    },
+    "goals-weekly-review": {
+      "file": "goals-weekly-review.md",
+      "mcp": [],
+      "description": "Weekly OKR check-in — collect actuals, draft CEO narrative email"
+    },
+    "pm": {
+      "file": "pm.md",
+      "mcp": [],
+      "description": "Triage tasks into ready / blocked / needs-human-gate. Suggest who or what should do each."
+    },
+    "session-logger": {
+      "file": "session-logger.md",
+      "mcp": [],
+      "description": "Consolidate temp logs into official session logs"
+    },
+    "skill-mining": {
+      "file": "skill-mining.md",
+      "mcp": [],
+      "description": "Surface patterns from past work — wins to repeat, friction to fix, workflows to codify as SOPs"
+    },
+    "start-here": {
+      "file": "start-here.md",
+      "mcp": [],
+      "description": "First-run onboarding: you (recorded in the brain), agents, permission mode, integrations, goals, first project"
+    },
+    "status-reporter": {
+      "file": "status-reporter.md",
+      "mcp": [],
+      "description": "Cross-project status dashboard"
+    },
+    "system-overview": {
+      "file": "system-overview.md",
+      "mcp": [],
+      "description": "Tour of Ace and Ace OS: the why, the three pillars, what is installed (gates, brain, dashboard). Hands off to start-here."
+    },
+    "vscode-setup": {
+      "file": "vscode-setup.md",
+      "mcp": [],
+      "description": "Configure VS Code: extensions, improved workbench, permission layers"
+    },
+    "workspace-sync": {
+      "file": "workspace-sync.md",
+      "mcp": [],
+      "description": "Git operations through natural language (auto-consolidates temp logs first)"
+    },
+    "os-worker": {
+      "file": "os-worker.md",
+      "mcp": [],
+      "description": "The worker the Ace OS dashboard chat delegates real work to (returns a short spoken-friendly summary)"
+    }
+  }
+}

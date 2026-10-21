@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brain</title>
+<link rel="stylesheet" href="./brain.css">
+</head>
+<body>
+<div id="bg" aria-hidden="true"></div>
+<canvas id="gl"></canvas>
+<canvas id="lead" aria-hidden="true"></canvas>
+<div id="labels"></div>
+
+<header id="top" class="glass">
+  <span class="mark" aria-hidden="true"></span>
+  <h1>Brain</h1>
+  <p class="line">Every note in memory on one ring, every link a fibre, firing as sessions read and write.</p>
+  <span class="hsp"></span>
+  <div class="legend" id="legend"></div>
+  <div class="counts" id="counts"></div>
+  <div class="live demo" id="live" title="Live session feed"><i></i><span>demo</span></div>
+</header>
+
+<div id="askWrap">
+  <label class="bar glass" for="q">
+    <span class="prompt">Ask</span>
+    <input id="q" type="text" autocomplete="off" spellcheck="false" placeholder="what do I know about ...">
+    <span id="qcount" class="qcount"></span>
+    <span class="keys"><kbd>/</kbd> focus <kbd>&uarr;</kbd><kbd>&darr;</kbd> step <kbd>Esc</kbd> clear</span>
+  </label>
+  <div id="results" class="glass"></div>
+</div>
+
+<aside id="card" class="glass"><div class="in" id="cardIn"></div></aside>
+
+<div id="ticker" class="glass demo">
+  <div class="th"><i></i><b id="tstate">demo</b><span id="tnote">ambient activity only</span></div>
+  <div id="tlist"></div>
+</div>
+
+<div id="strip" class="glass">
+  <div class="ctl">
+    <div class="row1">
+      <button id="play" title="Play / pause (Space)" aria-label="Play"></button>
+      <div><div class="tdate" id="tdate">-</div><div class="tsub" id="tsub">-</div></div>
+    </div>
+    <div class="btns"><button id="bStart">Start</button><button id="bBack">- week</button><button id="bFwd">+ week</button><button id="bToday">Today</button></div>
+  </div>
+  <canvas id="tl"></canvas>
+</div>
+
+<div id="tip" class="glass"></div>
+<div id="loading">loading the brain ...</div>
+<div id="err"></div>
+
+<script src="../vendor/three.min.js"></script>
+<script src="./shaders.js"></script>
+<script src="./brain.js"></script>
+</body>
+</html>

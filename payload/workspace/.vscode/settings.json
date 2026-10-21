@@ -1,0 +1,7 @@
+{
+  "terminal.integrated.inheritEnv": false,
+  "markdown-preview-enhanced.automaticallyShowPreviewOfMarkdownBeingEdited": true,
+  "workbench.editorAssociations": {
+    "*.md": "vscode.markdown.preview.editor"
+  }
+}

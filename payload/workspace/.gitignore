@@ -1,0 +1,29 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# Local cache
+.claude_github_username
+
+# Editor
+.vscode/*.code-snippets
+.idea/
+
+# Logs (keep temp dir, ignore archive contents)
+logs/archive/*
+!logs/archive/.gitkeep
+
+# Node
+node_modules/
+
+# Ace OS dashboard runtime files (never commit: the chat token is a secret)
+.chat-token
+.chat-enabled
+brain-data.js
+brain-data.json
+
+# Memory tooling scratch
+logs/temp/_mine-digests/
+*.tmp
+_regen.lock

@@ -1,0 +1,170 @@
+{
+ "tool": "sitemap-tree",
+ "version": 1,
+ "source": "Ace OS starter: the default sections for a new brain. Rename, add or remove topics as your work takes shape (keep every slug unique; a note whose home disappears falls back to Needs a home).",
+ "corrections": [],
+ "sections": [
+  {
+   "slug": "business",
+   "name": "Your business",
+   "scope": "Who you are, what your business does and sells, how it runs, and the people you work with.",
+   "topics": [
+    {
+     "slug": "business/about",
+     "name": "About you and your business",
+     "scope": "Your role, what the business does, its offer, goals and how it runs day to day.",
+     "why": "about you, your business, its offer or how it operates"
+    },
+    {
+     "slug": "business/people",
+     "name": "Your team and partners",
+     "scope": "The people you work with, who owns what, and how you work together.",
+     "why": "about a person on your team or a partner and how you work with them"
+    }
+   ]
+  },
+  {
+   "slug": "work",
+   "name": "Clients and projects",
+   "scope": "The work itself: each client or customer, and each project in flight with its state and next step.",
+   "topics": [
+    {
+     "slug": "work/clients",
+     "name": "Clients and customers",
+     "scope": "One client or customer per note or group of notes: what they need, what was agreed, what was delivered.",
+     "why": "about a specific client or customer"
+    },
+    {
+     "slug": "work/projects",
+     "name": "Projects and resume points",
+     "scope": "Multi-session projects: current state, decisions, where to resume.",
+     "why": "about a project in flight, its decisions or where to pick it up"
+    }
+   ]
+  },
+  {
+   "slug": "claude",
+   "name": "How Claude works",
+   "scope": "The machinery: hooks and gates, the memory system and wrap-ups, agents and workflows, skills.",
+   "topics": [
+    {
+     "slug": "claude/hooks",
+     "name": "Hooks and gates",
+     "scope": "What the global and workspace hooks do, how to write, wire, scope and trust a hook.",
+     "why": "about a Claude Code hook, a gate, or the auto-mode safety checks"
+    },
+    {
+     "slug": "claude/memory",
+     "name": "Memory, wrap-ups and session history",
+     "scope": "How the brain stores, files and finds notes; the wrap-up pass; temp logs; transcripts and history.",
+     "why": "about the memory system, recall, the sitemap, wrap-up or session history"
+    },
+    {
+     "slug": "claude/agents",
+     "name": "Agents, sessions and workflows",
+     "scope": "Subagents, multi-agent workflows, parallel sessions and how to tell what a session is doing.",
+     "why": "about agents, workflows, delegation or running sessions"
+    },
+    {
+     "slug": "claude/skills",
+     "name": "Skills and playbooks",
+     "scope": "Using and building skills (repeatable procedures Claude runs on command).",
+     "why": "about running or building a skill"
+    }
+   ]
+  },
+  {
+   "slug": "proof",
+   "name": "Checking work",
+   "scope": "What counts as proof: the standards, how to build gates that really bite, and how to check what things look like.",
+   "topics": [
+    {
+     "slug": "proof/standards",
+     "name": "The proof standards",
+     "scope": "The rules for claiming done, works, fixed or verified.",
+     "why": "a standard for proving work is done"
+    },
+    {
+     "slug": "proof/gates",
+     "name": "Gates that really bite",
+     "scope": "How to build, test and trust automated checks, and the ways they pass when they should fail.",
+     "why": "about building or trusting a gate, test or check"
+    },
+    {
+     "slug": "proof/visual",
+     "name": "Look at it",
+     "scope": "Render and read: screenshots, breakpoints, interaction checks for pages and dashboards.",
+     "why": "about verifying how something looks or behaves on screen"
+    }
+   ]
+  },
+  {
+   "slug": "aceos",
+   "name": "Ace OS",
+   "scope": "The Ace OS shell: the dashboard (Mission Control), the 3D brain view, the sitemap page, install and settings.",
+   "topics": [
+    {
+     "slug": "aceos/dashboard",
+     "name": "Dashboard and brain view",
+     "scope": "How the dashboard and the brain view work, their panels, the opt-in chat, and changing them safely.",
+     "why": "about the Ace OS dashboard, the brain view or the sitemap page"
+    },
+    {
+     "slug": "aceos/setup",
+     "name": "Install, update and settings",
+     "scope": "Installing and updating Ace OS, settings.json, the config folder, and turning parts on or off.",
+     "why": "about installing, updating or configuring Ace OS"
+    }
+   ]
+  },
+  {
+   "slug": "rules",
+   "name": "Your rules for me",
+   "scope": "How you want Claude to work with you: how to talk, what scope to keep, how to hand things over.",
+   "topics": [
+    {
+     "slug": "rules/talk",
+     "name": "How to talk to you and decide",
+     "scope": "Tone, format, when to ask and when to decide, how to close a session.",
+     "why": "a rule about how Claude should talk to you or decide"
+    },
+    {
+     "slug": "rules/scope",
+     "name": "Do exactly what was asked",
+     "scope": "Scope rules: what to change, what to leave alone, when to ask before acting.",
+     "why": "a rule about scope or permission"
+    },
+    {
+     "slug": "rules/deliver",
+     "name": "How to hand you things",
+     "scope": "How you want results, files, links and summaries delivered.",
+     "why": "a rule about how to deliver work to you"
+    }
+   ]
+  },
+  {
+   "slug": "machines",
+   "name": "Machines and tools",
+   "scope": "Your computers, terminal and shells, and the quirks of the tools Claude uses on them.",
+   "topics": [
+    {
+     "slug": "machines/setup",
+     "name": "Your computer and terminal",
+     "scope": "Operating system, terminal, shells, folders and how sessions are started.",
+     "why": "about your machine, terminal or where sessions start"
+    },
+    {
+     "slug": "machines/tools",
+     "name": "Tool quirks",
+     "scope": "Traps in git, Node, browsers, file formats and other tools, and portable paths.",
+     "why": "about a tool's quirk or a portability trap"
+    }
+   ]
+  }
+ ],
+ "inbox": {
+  "slug": "unsorted/needs-a-home",
+  "name": "Unsorted: needs a home",
+  "scope": "New notes the filing step could not place. Shown at the top of the sitemap until someone files them."
+ }
+}

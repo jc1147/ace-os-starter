@@ -1,0 +1,112 @@
+{
+  "about": "The global hook wiring Ace OS installs. The installer adds one settings.json entry per item, {matcher?, hooks:[{type:command, command: node \"<HOME>/.claude/hooks/<file>\"}]}, in this order within each event, and leaves every other entry alone.",
+  "events": {
+    "SessionStart": [
+      {
+        "file": "inject-deterministic-contract.js"
+      },
+      {
+        "file": "inject-memory-protocol.js"
+      },
+      {
+        "file": "inject-memory-corrections.js"
+      },
+      {
+        "file": "inject-ultracode-default.js"
+      },
+      {
+        "file": "inject-first-run-onboarding.js"
+      }
+    ],
+    "SubagentStart": [
+      {
+        "file": "inject-deterministic-contract.js"
+      },
+      {
+        "file": "inject-memory-protocol.js"
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "file": "inject-anti-drift.js"
+      },
+      {
+        "file": "inject-wrap-memory-directive.js"
+      }
+    ],
+    "PreToolUse": [
+      {
+        "file": "block-memory-md-too-large.js",
+        "matcher": "Write|Edit"
+      },
+      {
+        "file": "block-undocumented-launch.js",
+        "matcher": "Bash|PowerShell"
+      },
+      {
+        "file": "block-memory-line-bloat.js",
+        "matcher": "Write|Edit"
+      },
+      {
+        "file": "block-nonportable-path.js",
+        "matcher": "Write|Edit|MultiEdit"
+      },
+      {
+        "file": "block-commit-without-memory.js",
+        "matcher": "Bash|PowerShell"
+      },
+      {
+        "file": "block-shared-file-contention.js",
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit|Bash|PowerShell"
+      },
+      {
+        "file": "block-git-add-sweep.js",
+        "matcher": "Bash|PowerShell"
+      },
+      {
+        "file": "block-memory-git-rewrite.js",
+        "matcher": "Bash|PowerShell"
+      }
+    ],
+    "Stop": [
+      {
+        "file": "block-unverified-completion.js"
+      },
+      {
+        "file": "block-unfounded-boot-claim.js"
+      },
+      {
+        "file": "block-doc-action-drift.js"
+      },
+      {
+        "file": "block-premature-stop.js"
+      },
+      {
+        "file": "block-unpersisted-memory.js"
+      },
+      {
+        "file": "regen-memory-index.js"
+      },
+      {
+        "file": "block-wrap-without-memory.js"
+      }
+    ],
+    "SubagentStop": [
+      {
+        "file": "block-unverified-completion.js"
+      },
+      {
+        "file": "block-unfounded-boot-claim.js"
+      },
+      {
+        "file": "block-doc-action-drift.js"
+      },
+      {
+        "file": "block-premature-stop.js"
+      },
+      {
+        "file": "block-unpersisted-memory.js"
+      }
+    ]
+  }
+}
