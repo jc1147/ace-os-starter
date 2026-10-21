@@ -38,14 +38,21 @@ LTS version:
 After installing, `node --version` in your current shell may still fail because the PATH was loaded before
 the install. Ask the user to close and reopen Claude Code in this folder, then continue from Step 2a.
 
-### 2b. git (recommended)
+### 2b. git (required on Windows, recommended on macOS)
 
 Check: `git --version`
-Good: prints a version. If it is missing, ask whether to install it (Ace works without git, but the
-workspace will not be a git repository):
-- **Windows:** `winget install --id Git.Git -e`
-- **macOS:** `xcode-select --install` (opens a system dialog the user must accept), or `brew install git`.
-If the user says no, continue; the installer will print a WARN for git, which is fine.
+Good: prints a version.
+
+- **Windows: required.** Claude Code runs Ace's hooks with Git Bash, which comes with Git for Windows.
+  Without it, Claude Code runs them with PowerShell instead, and the workspace hooks in `~/ace` cannot find
+  their files (the user would see hook errors on every message). If git is missing, explain this and ask
+  permission to install it: `winget install --id Git.Git -e` (if `winget` is missing, ask the user to
+  download Git for Windows from https://git-scm.com/download/win and install it with the default options).
+  Do not continue the install without it.
+- **macOS: recommended.** If it is missing, ask whether to install it (Ace works without git, but the
+  workspace will not be a git repository): `xcode-select --install` (opens a system dialog the user must
+  accept), or `brew install git`. If the user says no, continue; the installer will print a WARN for git,
+  which is fine on macOS.
 
 ### 2c. Claude Code settings location
 
@@ -108,7 +115,8 @@ If anything FAILs, see Troubleshooting, fix it, and run Step 4 and Step 5 again.
 Say this (in your own words is fine, but keep all four points):
 
 1. **Open a NEW Claude Code session in `~/ace`** (the new gates and memory load when a session starts;
-   this installer session does not count). For example: in a terminal `cd ~/ace` then `claude`, or open the
+   this installer session does not count). On Windows, if Git was installed during this setup, fully quit
+   Claude Code (and the Claude app, if they use it) first, so the new session finds Git Bash. For example: in a terminal `cd ~/ace` then `claude`, or open the
    `ace` folder in your editor or the Claude app.
 2. In that new session, **type "start here"**. Claude will get to know you, set up your goals and your
    first project, and save what it learns to your brain.
@@ -133,6 +141,7 @@ Also tell them: keep this installer folder; `node installer/doctor.mjs` checks t
 | `Node ... is too old` / `node: command not found` | Node.js missing or old | Step 2a |
 | `FAIL reindex` or `FAIL recall finds a seed note` | the brain tools could not run | run `node ~/ace/Code/memory-system/reindex.mjs` and show the user its output; rerun Step 4 |
 | `FAIL dashboard boots` | the dashboard did not start | run `node installer/doctor.mjs` again (a busy computer can be slow); if it still fails, show the user the detail column |
+| `WARN git not found` on Windows, or "hook error" lines in the new session | Git for Windows is missing, so Claude Code ran the hooks with PowerShell | Step 2b: install Git for Windows, fully quit and reopen Claude Code, then start the session in `~/ace` again |
 | `WARN node is not on the default shell PATH` (Linux) | Node is installed somewhere the hooks would not find it | nothing to do: the installer wired the hooks with Node's full path |
 | `FAIL node used by hooks ... missing` | Node was upgraded or moved after the install (on macOS the hooks call Node by its full path, because Claude Code started from the Dock or Finder cannot see Homebrew, nvm or Volta) | rerun Step 4: it points the hooks at the current Node |
 

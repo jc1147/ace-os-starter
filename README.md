@@ -18,7 +18,8 @@ What you get:
 
 - [Claude Code](https://claude.com/claude-code), signed in.
 - **Node.js 18 or newer** (the LTS version from https://nodejs.org). Check with `node --version`.
-- **git** (recommended). Check with `git --version`.
+- **git**: required on Windows ([Git for Windows](https://git-scm.com/download/win); Claude Code runs Ace's hooks
+  with its Git Bash), recommended on macOS. Check with `git --version`.
 
 ## Install
 
